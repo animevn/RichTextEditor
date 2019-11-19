@@ -80,7 +80,7 @@
                 app:layout_constraintStart_toEndOf="@+id/ibnItalic"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/editor_underline" />
+                app:srcCompat="@drawable/editor_underline_scale" />
 
             <ImageButton
                 android:id="@+id/ibnStrike"
@@ -93,7 +93,7 @@
                 app:layout_constraintStart_toEndOf="@+id/ibnUnderline"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/editor_strikethrough" />
+                app:srcCompat="@drawable/editor_strike_scale" />
 
             <ImageButton
                 android:id="@+id/ibnLeft"
@@ -106,7 +106,7 @@
                 app:layout_constraintStart_toEndOf="@+id/ibnStrike"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/editor_left" />
+                app:srcCompat="@drawable/editor_left_scale" />
 
             <ImageButton
                 android:id="@+id/ibnCenter"
@@ -119,7 +119,7 @@
                 app:layout_constraintStart_toEndOf="@+id/ibnLeft"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/editor_center" />
+                app:srcCompat="@drawable/editor_center_scale" />
 
             <ImageButton
                 android:id="@+id/ibnRight"
@@ -132,7 +132,7 @@
                 app:layout_constraintStart_toEndOf="@+id/ibnCenter"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/editor_right" />
+                app:srcCompat="@drawable/editor_right_scale" />
 
             <ImageButton
                 android:id="@+id/ibnBullet"

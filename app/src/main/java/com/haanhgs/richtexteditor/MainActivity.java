@@ -46,6 +46,52 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 editor.setBold();
+                editor.remove
+            }
+        });
+    }
+
+    private void handleItalic(){
+        ibnItalic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.setItalic();
+            }
+        });
+    }
+
+    private void handleUnderline(){
+        ibnUnderline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.setUnderline();
+            }
+        });
+    }
+
+    private void handleStrike(){
+        ibnStrike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.setStrikeThrough();
+            }
+        });
+    }
+
+    private void handleLeft(){
+        ibnLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.setAlignLeft();
+            }
+        });
+    }
+
+    private void handleCenter(){
+        ibnCenter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.setAlignCenter();
             }
         });
     }
@@ -59,6 +105,24 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void handleBullet(){
+        ibnBullet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.setBullets();
+            }
+        });
+    }
+
+    private void handleNumber(){
+        ibnNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.setNumbers();
+            }
+        });
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,8 +131,13 @@ public class MainActivity extends AppCompatActivity {
         initEditor();
         initButtons();
         handleBold();
+        handleItalic();
+        handleUnderline();
+        handleStrike();
+        handleLeft();
+        handleCenter();
         handleRight();
-
-
+        handleBullet();
+        handleNumber();
     }
 }
