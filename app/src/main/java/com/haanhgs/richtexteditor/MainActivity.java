@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 editor.setBold();
-                editor.remove
             }
         });
     }
