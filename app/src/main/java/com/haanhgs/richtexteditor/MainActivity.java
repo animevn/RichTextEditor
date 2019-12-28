@@ -1,27 +1,44 @@
 package com.haanhgs.richtexteditor;
 
-import androidx.appcompat.app.AppCompatActivity;
-import jp.wasabeef.richeditor.RichEditor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import jp.wasabeef.richeditor.RichEditor;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RichEditor editor;
-    private ImageButton ibnBold;
-    private ImageButton ibnItalic;
-    private ImageButton ibnUnderline;
-    private ImageButton ibnStrike;
-    private ImageButton ibnLeft;
-    private ImageButton ibnCenter;
-    private ImageButton ibnRight;
-    private ImageButton ibnBullet;
-    private ImageButton ibnNumber;
+    @BindView(R.id.editor)
+    RichEditor editor;
+    @BindView(R.id.cvEditor1)
+    CardView cvEditor1;
+    @BindView(R.id.ibnBold)
+    ImageButton ibnBold;
+    @BindView(R.id.ibnItalic)
+    ImageButton ibnItalic;
+    @BindView(R.id.ibnUnderline)
+    ImageButton ibnUnderline;
+    @BindView(R.id.ibnStrike)
+    ImageButton ibnStrike;
+    @BindView(R.id.ibnLeft)
+    ImageButton ibnLeft;
+    @BindView(R.id.ibnCenter)
+    ImageButton ibnCenter;
+    @BindView(R.id.ibnRight)
+    ImageButton ibnRight;
+    @BindView(R.id.ibnBullet)
+    ImageButton ibnBullet;
+    @BindView(R.id.ibnNumber)
+    ImageButton ibnNumber;
+    @BindView(R.id.cvEditor2)
+    CardView cvEditor2;
 
-
-    private void initEditor(){
+    private void initEditor() {
         editor = findViewById(R.id.editor);
         editor.setEditorFontSize(18);
         editor.setEditorFontColor(Color.BLACK);
@@ -29,114 +46,45 @@ public class MainActivity extends AppCompatActivity {
         editor.setPlaceholder("Create or edit content ...");
     }
 
-    private void initButtons(){
-        ibnBold = findViewById(R.id.ibnBold);
-        ibnItalic = findViewById(R.id.ibnItalic);
-        ibnUnderline = findViewById(R.id.ibnUnderline);
-        ibnStrike = findViewById(R.id.ibnStrike);
-        ibnLeft = findViewById(R.id.ibnLeft);
-        ibnCenter = findViewById(R.id.ibnCenter);
-        ibnRight = findViewById(R.id.ibnRight);
-        ibnBullet = findViewById(R.id.ibnBullet);
-        ibnNumber = findViewById(R.id.ibnNumber);
-    }
-
-    private void handleBold(){
-        ibnBold.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editor.setBold();
-            }
-        });
-    }
-
-    private void handleItalic(){
-        ibnItalic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editor.setItalic();
-            }
-        });
-    }
-
-    private void handleUnderline(){
-        ibnUnderline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editor.setUnderline();
-            }
-        });
-    }
-
-    private void handleStrike(){
-        ibnStrike.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editor.setStrikeThrough();
-            }
-        });
-    }
-
-    private void handleLeft(){
-        ibnLeft.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editor.setAlignLeft();
-            }
-        });
-    }
-
-    private void handleCenter(){
-        ibnCenter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editor.setAlignCenter();
-            }
-        });
-    }
-
-    private void handleRight(){
-        ibnRight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editor.setAlignRight();
-            }
-        });
-    }
-
-    private void handleBullet(){
-        ibnBullet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editor.setBullets();
-            }
-        });
-    }
-
-    private void handleNumber(){
-        ibnNumber.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                editor.setNumbers();
-            }
-        });
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ButterKnife.bind(this);
         initEditor();
-        initButtons();
-        handleBold();
-        handleItalic();
-        handleUnderline();
-        handleStrike();
-        handleLeft();
-        handleCenter();
-        handleRight();
-        handleBullet();
-        handleNumber();
+    }
+
+    @OnClick({R.id.ibnBold, R.id.ibnItalic, R.id.ibnUnderline, R.id.ibnStrike, R.id.ibnLeft,
+            R.id.ibnCenter, R.id.ibnRight, R.id.ibnBullet, R.id.ibnNumber})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.ibnBold:
+                editor.setBold();
+                break;
+            case R.id.ibnItalic:
+                editor.setItalic();
+                break;
+            case R.id.ibnUnderline:
+                editor.setUnderline();
+                break;
+            case R.id.ibnStrike:
+                editor.setStrikeThrough();
+                break;
+            case R.id.ibnLeft:
+                editor.setAlignLeft();
+                break;
+            case R.id.ibnCenter:
+                editor.setAlignCenter();
+                break;
+            case R.id.ibnRight:
+                editor.setAlignRight();
+                break;
+            case R.id.ibnBullet:
+                editor.setBullets();
+                break;
+            case R.id.ibnNumber:
+                editor.setNumbers();
+                break;
+        }
     }
 }
