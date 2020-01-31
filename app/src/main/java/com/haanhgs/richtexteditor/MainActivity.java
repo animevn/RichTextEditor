@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
     CardView cvEditor2;
 
     private void initEditor() {
-        editor = findViewById(R.id.editor);
         editor.setEditorFontSize(18);
         editor.setEditorFontColor(Color.BLACK);
         editor.setPadding(10, 10, 10, 10);
